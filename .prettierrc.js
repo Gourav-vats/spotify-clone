@@ -3,6 +3,6 @@ module.exports = {
    proseWrap: "preserve",
    semi: true,
    useTabs: false,
-   singleQuote: true,
+   singleQuote: false,
    bracketSpacing: true,
 };

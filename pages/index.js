@@ -1,14 +1,19 @@
-import Head from "next/head";
+import Head from 'next/head';
+import Sidebar from '../components/Sidebar';
 
 export default function Home() {
-   return (
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">
-         <Head>
-            <title>Create Next App</title>
-            <link rel="icon" href="/favicon.ico" />
-         </Head>
+  return (
+    <div className="bg-black h-screen">
+      <Head>
+        <title>Spotify 2.0</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-         <h1>Be Ready for Spotify 2.0</h1>
-      </div>
-   );
+      <main>
+        <Sidebar />
+        {/* center */}
+      </main>
+      <div>{/* player */}</div>
+    </div>
+  );
 }
