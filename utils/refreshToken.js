@@ -1,6 +1,6 @@
 import spotifyApi from "../lib/spotify";
 
-async function refreshAccessToken(token) {
+export default async function refreshAccessToken(token) {
   try {
     spotifyApi.setAccessToken(token.accessToken);
     spotifyApi.setRefreshToken(token.refreshToken);

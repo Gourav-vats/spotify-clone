@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
 import { LOGIN_URL } from "../../../lib/spotify";
+import refreshAccessToken from "../../../utils/refreshToken";
 
 export default NextAuth({
   providers: [
