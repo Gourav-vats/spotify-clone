@@ -1,10 +1,25 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import useSpotify from "../hooks/useSpotify";
+import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import millisToMinutesAndSeconds from "../lib/time";
 
 const Song = ({ order, track }) => {
-  console.log(typeof millisToMinutesAndSeconds);
+  const spotifyApi = useSpotify();
+  const [currentTrackId, setcurrentTrackId] =
+    useRecoilState(currentTrackIdState);
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
+
+  const playSong = () => {
+    setcurrentTrackId(track.track.id);
+    setIsPlaying(true);
+    spotifyApi.play({
+      uris: [track.track.uri],
+    });
+  };
+
   return (
-    <div className="grid grid-cols-2 text-sm xl:text-base text-gray-400 hover:bg-gray-900 rounded-lg cursor-pointer py-3 px-2">
+    <div className="grid grid-cols-2 text-sm xl:text-base text-gray-400 hover:bg-gray-900 rounded-lg cursor-pointer py-3 px-2" onClick={() => playSong()}>
       <div className="flex items-center space-x-4">
         <p>{order + 1}</p>
         <img className="h-10 w-10" src={track.track.album.images[0].url} />
