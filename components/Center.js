@@ -42,13 +42,13 @@ const Center = () => {
   return (
     <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8">
-        <div className="flex items-center space-x-1 p-1 opacity-90 hover:opacity-80 rounded-full cursor-pointer bg-black text-white" onClick={() => signOut()}>
+        <div className="flex items-center space-x-4 p-1 px-2 opacity-90 hover:opacity-80 rounded-full cursor-pointer bg-black text-white" onClick={() => signOut()}>
           <Image
             className="rounded-full"
             src={session?.user.image ? session.user.image : "/profileImg.jpg"}
             alt=""
-            width={32}
-            height={32}
+            width={30}
+            height={30}
           />
           <h2>{session?.user.name}</h2>
           <ChevronDownIcon className="h-5 w-5" />
