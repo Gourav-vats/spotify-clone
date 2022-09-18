@@ -5,7 +5,6 @@ import { currentTrackIdState, isPlayingState } from "../atoms/songAtom";
 import useSongInfo from "../hooks/useSongInfo";
 import useSpotify from "../hooks/useSpotify";
 import {
-  HeartIcon,
   VolumeUpIcon as VolumeDownIcon,
 } from "@heroicons/react/outline";
 import {
@@ -18,7 +17,6 @@ import {
   SwitchHorizontalIcon,
 } from "@heroicons/react/solid";
 import { debounce } from "lodash";
-import { data } from "autoprefixer";
 
 const Player = () => {
   const spotifyApi = useSpotify();
@@ -32,10 +30,8 @@ const Player = () => {
   const fetchCurrentSong = () => {
     if (!songInfo) {
       spotifyApi.getMyCurrentPlayingTrack().then((data) => {
-        console.log(data, "fetch current song");
         setcurrentTrackId(data.body?.item?.id);
         spotifyApi.getMyCurrentPlaybackState().then((data) => {
-          console.log(data, "fetch current true false");
           setIsPlaying(data.body?.is_playing);
         });
       });
