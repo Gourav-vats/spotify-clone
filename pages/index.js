@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Spotify 2.0</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/spotify.ico" />
       </Head>
 
       <div className="bg-black h-screen overflow-hidden">

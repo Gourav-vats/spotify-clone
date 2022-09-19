@@ -93,9 +93,7 @@ const Player = () => {
 
   return (
     <>
-      <div>
-        {premiumReq && <Modal message={modalMsg} close={handleClose} />}
-      </div>
+      {premiumReq && <Modal message={modalMsg} close={handleClose} />}
 
       <div className="h-20 bg-gradient-to-b from-black to-gray-900 text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-8">
         {/* Left */}
