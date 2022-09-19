@@ -21,7 +21,6 @@ const Song = ({ order, track }) => {
         uris: [track.track.uri],
       })
       .catch((err) => {
-        console.log(err.body);
         if (err.body.error.reason === "PREMIUM_REQUIRED") {
           setPremiumReq(true);
           setModalMsg(err?.body?.error?.reason);

@@ -50,7 +50,6 @@ const Player = () => {
     spotifyApi.getMyCurrentPlaybackState().then((data) => {
       if (data?.body?.is_playing) {
         spotifyApi.pause().catch((err) => {
-          console.log(err.body);
           if (err.body.error.reason === "PREMIUM_REQUIRED") {
             setPremiumReq(true);
             setModalMsg(toString(err.body.error.reason));
@@ -59,7 +58,6 @@ const Player = () => {
         setIsPlaying(false);
       } else {
         spotifyApi.play().catch((err) => {
-          console.log(err.body);
           if (err.body.error.reason === "PREMIUM_REQUIRED") {
             setPremiumReq(true);
             setModalMsg(err.body.error.reason);
@@ -73,7 +71,6 @@ const Player = () => {
   const debouncedAdjustVolume = useCallback(
     debounce((volume) => {
       spotifyApi.setVolume(volume).catch((err) => {
-        console.log(err.body);
         if (err.body.error.reason === "PREMIUM_REQUIRED") {
           setPremiumReq(true);
           setModalMsg(err?.body?.error?.reason);
