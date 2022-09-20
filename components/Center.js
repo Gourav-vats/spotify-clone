@@ -7,6 +7,7 @@ import { playlistIdState, playlistState } from "../atoms/playlistAtom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import useSpotify from "../hooks/useSpotify";
 import Songs from "./Songs";
+import greet from "../lib/greet";
 
 const colors = [
   "from-indigo-500",
@@ -62,7 +63,7 @@ const Center = () => {
         className={`flex flex-col bg-gradient-to-b to-black ${color} h-80 text-white p-8`}
       >
         <div className="top-5 left-8 text-white text-2xl md:text-3xl xl:text-5xl font-bold mb-4">
-          <p>Good Evening</p>
+          <p>{greet()}</p>
         </div>
         <div className="flex items-end space-x-7">
           <img
