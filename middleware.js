@@ -9,6 +9,7 @@ export async function middleware(req) {
   const url = req.nextUrl.clone();
 
   if (pathname.startsWith("/_next")) return NextResponse.next();
+  if (pathname === "/spotifyHeader.jpg") return NextResponse.next();
   // Allow the requests if the following is true..
   // 1. Its a request for getting a next-auth session
   // 2. Token exists
