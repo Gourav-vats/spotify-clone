@@ -28,7 +28,7 @@ const Sidebar = () => {
   }, [session, spotifyApi]);
 
   return (
-    <div className="text-gray-400 p-5 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll h-screen scrollbar-hide min-w-max sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex">
+    <div className="text-gray-400 p-5 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll h-screen scrollbar-hide sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex">
       <div className="space-y-3">
         <Image
           className="invert"
