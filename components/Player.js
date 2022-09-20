@@ -52,7 +52,7 @@ const Player = () => {
         spotifyApi.pause().catch((err) => {
           if (err.body.error.reason === "PREMIUM_REQUIRED") {
             setPremiumReq(true);
-            setModalMsg(toString(err.body.error.reason));
+            setModalMsg(err?.body?.error?.reason);
           }
         });
         setIsPlaying(false);
@@ -60,7 +60,7 @@ const Player = () => {
         spotifyApi.play().catch((err) => {
           if (err.body.error.reason === "PREMIUM_REQUIRED") {
             setPremiumReq(true);
-            setModalMsg(err.body.error.reason);
+            setModalMsg(err?.body?.error?.reason);
           }
         });
         setIsPlaying(true);
